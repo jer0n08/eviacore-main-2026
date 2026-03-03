@@ -1,7 +1,7 @@
 import { headers } from 'next/headers'
-import Script from 'next/script'
 import '../index.css'
 import AppShell from './AppShell'
+import ConsentManager from './ConsentManager'
 
 const fontStylesheetHref =
   'https://fonts.googleapis.com/css2?family=Geist:wght@400&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap'
@@ -35,34 +35,11 @@ export default async function RootLayout({ children }) {
         <link rel="preload" as="style" href={fontStylesheetHref} />
         <link rel="stylesheet" href={fontStylesheetHref} />
         <meta name="description" content={description} />
-        <Script
-          id="Cookiebot"
-          src="https://consent.cookiebot.com/uc.js"
-          data-cbid="ecf1da71-1804-4387-9e96-5c5556b44d67"
-          data-blockingmode="auto"
-          strategy="beforeInteractive"
-        />
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-2JW9WRHVF7"
-          strategy="afterInteractive"
-          data-cookieconsent="statistics"
-        />
-        <Script
-          id="ga4-init"
-          strategy="afterInteractive"
-          data-cookieconsent="statistics"
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-2JW9WRHVF7');`,
-          }}
-        />
       </head>
       <body>
-        <AppShell>{children}</AppShell>
+        <ConsentManager>
+          <AppShell>{children}</AppShell>
+        </ConsentManager>
       </body>
     </html>
   )
