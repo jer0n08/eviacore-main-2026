@@ -1,0 +1,17 @@
+# eviacore
+
+Application front-end basee sur React + Vite.
+
+## Demarrage rapide
+
+```bash
+npm install
+npm run dev
+```
+
+## Scripts utiles
+
+```bash
+npm run build
+npm run preview
+```
