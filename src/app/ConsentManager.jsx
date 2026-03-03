@@ -11,7 +11,7 @@ import { useEffect } from 'react'
 const GA_MEASUREMENT_ID = 'G-2JW9WRHVF7'
 
 function getConsentOptions() {
-  const backendURL = process.env.NEXT_PUBLIC_C15T_BACKEND_URL
+  const backendURL = globalThis?.process?.env?.NEXT_PUBLIC_C15T_BACKEND_URL
   const baseOptions = {
     consentCategories: [
       'necessary',
