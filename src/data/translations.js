@@ -722,21 +722,21 @@ const translations = {
     home: {
       overview: {
         eyebrow: 'Platform',
-        title: 'A client experience that replaces the usual back-and-forth.',
+        title: 'With the EVIACORE App\nUpload. Validate. Produce.',
         lead:
-          'Centralize your files, revisions, and deliveries in a single space, with precise control over lead times and quantities.',
+          'Upload your BOM, fine-tune volumes and lead times, and drive your manufacturing from a centralized space built to streamline every step.',
         cards: [
           {
             title: 'Instant pricing',
             text: 'Adjust volume and lead time to see pricing update in real time.',
           },
           {
-            title: 'Unified records',
-            text: 'All versions, approvals, and technical documents in one place.',
+            title: 'One project space',
+            text: 'All your versions, approvals, and technical documents in one place.',
           },
           {
             title: 'Live tracking',
-            text: 'Follow every step of your project in real time.',
+            text: 'Track every step of your project in real time.',
           },
         ],
       },

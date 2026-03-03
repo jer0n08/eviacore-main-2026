@@ -78,11 +78,14 @@ export default function HomePage() {
               <h2 className="mb-4 font-mono text-3xl md:text-4xl tracking-tight">
                 {overview.title.split('\n').map((line, index, lines) => {
                   if (index === 0) {
-                    const [before, after] = line.split("App EVIACORE")
+                    const highlightToken = line.includes('EVIACORE App')
+                      ? 'EVIACORE App'
+                      : 'App EVIACORE'
+                    const [before, after] = line.split(highlightToken)
                     return (
                       <span key={`${line}-${index}`}>
                         {before}
-                        <span className="text-amber-300">App EVIACORE</span>
+                        <span className="text-amber-300">{highlightToken}</span>
                         {after}
                         {index < lines.length - 1 ? <br /> : null}
                       </span>
