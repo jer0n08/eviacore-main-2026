@@ -88,111 +88,136 @@ function Contact() {
   }
 
   return (
-    <section className="section-spacing" id="contact" key={language}>
-      <div className="mx-auto grid w-11/12 max-w-6xl gap-12 lg:grid-cols-2 lg:gap-14">
-        <div>
-          <p className="mb-4 text-xs uppercase tracking-widest text-slate-400">
-            {t('contact.eyebrow')}
-          </p>
-          <h2 className="mb-4 font-mono text-4xl md:text-5xl leading-tight tracking-tight">
-            {t('contact.title')}
-          </h2>
-          <p className="mb-8 text-base text-slate-300">
-            {t('contact.lead')}
-          </p>
-          <div className="grid gap-5 text-slate-300">
-            <div>
-              <span className="text-xs uppercase tracking-widest text-slate-400">
-                {t('contact.emailLabel')}
-              </span>
-              <p className="mt-2 text-base text-white">contact@eviacore.com</p>
+    <>
+      <section className="section-spacing" id="contact" key={language}>
+        <div className="mx-auto grid w-11/12 max-w-6xl gap-12 lg:grid-cols-2 lg:gap-14">
+          <div>
+            <p className="mb-4 text-xs uppercase tracking-widest text-slate-400">
+              {t('contact.eyebrow')}
+            </p>
+            <h2 className="mb-4 font-mono text-4xl md:text-5xl leading-tight tracking-tight">
+              {t('contact.title')}
+            </h2>
+            <p className="mb-8 text-base text-slate-300">
+              {t('contact.lead')}
+            </p>
+            <div className="grid gap-5 text-slate-300">
+              <div>
+                <span className="text-xs uppercase tracking-widest text-slate-400">
+                  {t('contact.emailLabel')}
+                </span>
+                <p className="mt-2 text-base text-white">contact@eviacore.com</p>
+              </div>
+              <div>
+                <span className="text-xs uppercase tracking-widest text-slate-400">
+                  {t('contact.phoneLabel')}
+                </span>
+                <p className="mt-2 text-base text-white">+33 1 23 45 67 89</p>
+              </div>
+              <div>
+                <span className="text-xs uppercase tracking-widest text-slate-400">
+                  Adresse
+                </span>
+                <p className="mt-2 text-base text-white">
+                  8 Allee Isaac Newton – 33650 Martillac
+                </p>
+              </div>
             </div>
-            <div>
-              <span className="text-xs uppercase tracking-widest text-slate-400">
-                {t('contact.phoneLabel')}
-              </span>
-              <p className="mt-2 text-base text-white">+33 1 23 45 67 89</p>
+          </div>
+          <form
+            className="grid gap-5 rounded-none border border-white/10 bg-neutral-950/70 p-7 shadow-2xl"
+            onSubmit={handleSubmit}
+          >
+            {siteKey ? (
+              <Script
+                key={language}
+                src={`https://www.google.com/recaptcha/api.js?render=explicit&hl=${language}`}
+                async
+                defer
+                onLoad={renderRecaptcha}
+              />
+            ) : null}
+            <label className="grid gap-2 text-sm text-slate-300">
+              {t('contact.form.name')}
+              <input
+                className="rounded-xl border border-white/10 bg-transparent px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+                type="text"
+                placeholder={t('contact.form.namePlaceholder')}
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+              />
+            </label>
+            <label className="grid gap-2 text-sm text-slate-300">
+              {t('contact.form.email')}
+              <input
+                className="rounded-xl border border-white/10 bg-transparent px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+                type="email"
+                placeholder={t('contact.form.emailPlaceholder')}
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </label>
+            <label className="grid gap-2 text-sm text-slate-300">
+              {t('contact.form.message')}
+              <textarea
+                className="min-h-36 resize-y rounded-xl border border-white/10 bg-transparent px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+                rows="4"
+                placeholder={t('contact.form.messagePlaceholder')}
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+              />
+            </label>
+            <div className="grid gap-2 text-sm text-slate-300">
+              <span>{t('contact.form.recaptchaLabel')}</span>
+              <div id="recaptcha-badge" />
+              {!siteKey ? (
+                <span className="text-xs text-amber-300">
+                  {t('contact.form.recaptchaMissing')}
+                </span>
+              ) : null}
+              {captchaError ? (
+                <span className="text-xs text-amber-300">
+                  {captchaError}
+                </span>
+              ) : null}
+              {submitError ? (
+                <span className="text-xs text-amber-300">
+                  {submitError}
+                </span>
+              ) : null}
+            </div>
+            {submitMessage ? (
+              <p className="border border-amber-300/40 bg-amber-400/10 px-4 py-3 text-sm text-amber-300">
+                {submitMessage}
+              </p>
+            ) : null}
+            <button
+              className="mt-2 inline-flex items-center justify-center bg-[#F6C94A] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-neutral-900 shadow-lg"
+              type="submit"
+              disabled={isSubmitting}
+              aria-busy={isSubmitting}
+            >
+              {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
+            </button>
+          </form>
+        </div>
+      </section>
+      <section className="section-spacing pt-0">
+        <div className="mx-auto w-11/12 max-w-6xl">
+          <div className="overflow-hidden rounded-none border border-white/10 bg-neutral-950/70 shadow-2xl">
+            <div className="aspect-[4/5] w-full sm:aspect-[21/9]">
+              <iframe
+                className="h-full w-full"
+                title="Carte Google Eviacore Martillac"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=8%20Allee%20Isaac%20Newton%20-%2033650%20Martillac&output=embed"
+              />
             </div>
           </div>
         </div>
-        <form
-          className="grid gap-5 rounded-none border border-white/10 bg-neutral-950/70 p-7 shadow-2xl"
-          onSubmit={handleSubmit}
-        >
-          {siteKey ? (
-            <Script
-              key={language}
-              src={`https://www.google.com/recaptcha/api.js?render=explicit&hl=${language}`}
-              async
-              defer
-              onLoad={renderRecaptcha}
-            />
-          ) : null}
-          <label className="grid gap-2 text-sm text-slate-300">
-            {t('contact.form.name')}
-            <input
-              className="rounded-xl border border-white/10 bg-transparent px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
-              type="text"
-              placeholder={t('contact.form.namePlaceholder')}
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-            />
-          </label>
-          <label className="grid gap-2 text-sm text-slate-300">
-            {t('contact.form.email')}
-            <input
-              className="rounded-xl border border-white/10 bg-transparent px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
-              type="email"
-              placeholder={t('contact.form.emailPlaceholder')}
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-          </label>
-          <label className="grid gap-2 text-sm text-slate-300">
-            {t('contact.form.message')}
-            <textarea
-              className="min-h-36 resize-y rounded-xl border border-white/10 bg-transparent px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
-              rows="4"
-              placeholder={t('contact.form.messagePlaceholder')}
-              value={message}
-              onChange={(event) => setMessage(event.target.value)}
-            />
-          </label>
-          <div className="grid gap-2 text-sm text-slate-300">
-            <span>{t('contact.form.recaptchaLabel')}</span>
-            <div id="recaptcha-badge" />
-            {!siteKey ? (
-              <span className="text-xs text-amber-300">
-                {t('contact.form.recaptchaMissing')}
-              </span>
-            ) : null}
-            {captchaError ? (
-              <span className="text-xs text-amber-300">
-                {captchaError}
-              </span>
-            ) : null}
-            {submitError ? (
-              <span className="text-xs text-amber-300">
-                {submitError}
-              </span>
-            ) : null}
-          </div>
-          {submitMessage ? (
-            <p className="border border-amber-300/40 bg-amber-400/10 px-4 py-3 text-sm text-amber-300">
-              {submitMessage}
-            </p>
-          ) : null}
-          <button
-            className="mt-2 inline-flex items-center justify-center bg-[#F6C94A] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-neutral-900 shadow-lg"
-            type="submit"
-            disabled={isSubmitting}
-            aria-busy={isSubmitting}
-          >
-            {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
-          </button>
-        </form>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 
