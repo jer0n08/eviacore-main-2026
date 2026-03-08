@@ -16,19 +16,38 @@ const Footer = forwardRef(function Footer(_props, ref) {
   const mapHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`
 
   return (
-    <footer className="footer" key={language} ref={ref}>
-      <div className="container footer-inner">
+    <footer className="py-10 pb-16" key={language} ref={ref}>
+      <div className="mx-auto flex w-11/12 max-w-6xl flex-wrap justify-between gap-5 text-[0.85rem] text-slate-400">
         {tagline || address ? (
-          <div className="footer-meta">
+          <div className="flex flex-col gap-1.5">
             {tagline ? <p>{tagline}</p> : null}
-            {address ? <p className="footer-address">{address}</p> : null}
+            {address ? (
+              <a
+                className="text-slate-300 underline decoration-[#F6C94A]/60 underline-offset-4 transition-colors hover:text-[#F6C94A]"
+                href={mapHref}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {address}
+              </a>
+            ) : null}
           </div>
         ) : null}
-        <p className="footer-rights">
+        <p className="text-slate-300">
           {rightsLines.map((line, index) => (
             <span key={`${line}-${index}`}>
               {line.includes('Allée Isaac Newton') ? (
-                <a href={mapHref} target="_blank" rel="noreferrer">
+                <a
+                  className="transition-colors hover:text-[#F6C94A]"
+                  style={{
+                    textDecoration: 'underline',
+                    textDecorationColor: 'rgba(246, 201, 74, 0.6)',
+                    textUnderlineOffset: '4px',
+                  }}
+                  href={mapHref}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {line}
                 </a>
               ) : (
@@ -38,14 +57,20 @@ const Footer = forwardRef(function Footer(_props, ref) {
             </span>
           ))}
         </p>
-        <div className="footer-links">
-          <a href={`${localePrefix}/cgv`}>{t('footer.cgv')}</a>
-          <a href={`${localePrefix}/mentions-legales`}>{t('footer.legal')}</a>
-          <a href={`${localePrefix}/donnees-personnelles`}>{t('footer.privacy')}</a>
+        <div className="ml-auto flex flex-wrap gap-4 text-[0.75rem] uppercase tracking-[0.12em] text-white">
+          <a className="transition-colors hover:text-[#F6C94A]" href={`${localePrefix}/cgv`}>
+            {t('footer.cgv')}
+          </a>
+          <a className="transition-colors hover:text-[#F6C94A]" href={`${localePrefix}/mentions-legales`}>
+            {t('footer.legal')}
+          </a>
+          <a className="transition-colors hover:text-[#F6C94A]" href={`${localePrefix}/donnees-personnelles`}>
+            {t('footer.privacy')}
+          </a>
         </div>
       </div>
       <button
-        className="scroll-top-button"
+        className="fixed bottom-7 right-7 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#F6C94A]/45 bg-[#0a0b0d]/85 text-slate-100 backdrop-blur transition hover:-translate-y-0.5 hover:border-[#F6C94A]/70 hover:shadow-[0_10px_20px_rgba(246,201,74,0.15)]"
         type="button"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="Remonter en haut de la page"

@@ -23,7 +23,7 @@ const AccordionTrigger = React.forwardRef(({ className, children, ...props }, re
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        'flex flex-1 items-center justify-between gap-6 px-6 py-5 text-base font-medium tracking-tight text-slate-100 transition-all duration-300 hover:text-white [&[data-state=open]>svg]:rotate-180 font-geist',
+        "flex flex-1 items-center justify-between gap-6 px-6 py-5 text-base font-medium tracking-tight text-slate-100 transition-all duration-300 hover:text-white [&[data-state=open]>svg]:rotate-180 font-['Geist',_Space_Grotesk,_Segoe_UI,_sans-serif]",
         className
       )}
       {...props}
@@ -38,10 +38,7 @@ AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 const AccordionContent = React.forwardRef(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className={cn(
-      'accordion-content overflow-hidden text-slate-300',
-      className
-    )}
+    className={cn('accordion-content overflow-hidden text-slate-300', className)}
     {...props}
   >
     <div className="px-6 pb-6">{children}</div>

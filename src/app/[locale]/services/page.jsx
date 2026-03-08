@@ -13,7 +13,7 @@ export default function ServicesPage() {
   }, [])
 
   return (
-    <section className="page" id="services">
+    <section className="relative" id="services">
       <ServicesHero />
       <Services />
     </section>

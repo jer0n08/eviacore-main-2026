@@ -89,13 +89,13 @@ function Contact() {
 
   return (
     <>
-      <section className="section-spacing" id="contact" key={language}>
+      <section className="py-[var(--section-spacing)]" id="contact" key={language}>
         <div className="mx-auto grid w-11/12 max-w-6xl gap-12 lg:grid-cols-2 lg:gap-14">
           <div>
             <p className="mb-4 text-xs uppercase tracking-widest text-slate-400">
               {t('contact.eyebrow')}
             </p>
-            <h2 className="mb-4 font-mono text-4xl md:text-5xl leading-tight tracking-tight">
+            <h2 className="mb-4 text-4xl md:text-5xl font-semibold leading-tight tracking-tight font-['Space_Mono',_IBM_Plex_Mono,_monospace]">
               {t('contact.title')}
             </h2>
             <p className="mb-8 text-base text-slate-300">
@@ -202,7 +202,7 @@ function Contact() {
           </form>
         </div>
       </section>
-      <section className="section-spacing pt-0">
+      <section className="pb-[var(--section-spacing)]">
         <div className="mx-auto w-11/12 max-w-6xl">
           <div className="overflow-hidden rounded-none border border-white/10 bg-neutral-950/70 shadow-2xl">
             <div className="aspect-[4/5] w-full sm:aspect-[21/9]">

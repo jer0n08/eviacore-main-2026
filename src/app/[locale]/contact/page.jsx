@@ -12,7 +12,7 @@ export default function ContactPage() {
   }, [])
 
   return (
-    <section className="page" id="contact">
+    <section className="relative" id="contact">
       <Contact />
     </section>
   )

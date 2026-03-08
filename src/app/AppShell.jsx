@@ -23,7 +23,7 @@ function AppShell({ children }) {
 
   return (
     <LanguageProvider>
-      <div className="app">
+      <div className="app min-h-screen relative overflow-hidden">
         <Navbar />
         <main>
           {children}

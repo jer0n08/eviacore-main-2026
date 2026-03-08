@@ -14,7 +14,7 @@ function Services() {
   const timelineStepsFabrication = t('services.timelineFabrication.items')
   const timelineTitle = t('services.timelineOnline.title')
   const fabricationTitle = t('services.timelineFabrication.title')
-  const assemblyFeatures = t('services.assemblyFeatures')
+  const assemblyCapabilities = t('services.assemblyCapabilities')
   const timelinePairs = timelineSteps.reduce((rows, step, index) => {
     if (index % 2 === 0) {
       rows.push([step])
@@ -49,6 +49,7 @@ function Services() {
         return
       }
 
+      const revealSections = gsap.utils.toArray('.services-section')
       const pairedSections = gsap.utils.toArray(
         '.timeline-section.is-paired'
       )
@@ -68,6 +69,9 @@ function Services() {
 
       ctx = gsap.context(() => {
         if (prefersReducedMotion) {
+          if (revealSections.length) {
+            gsap.set(revealSections, { opacity: 1, y: 0 })
+          }
           const pairedItems = gsap.utils.toArray(
             '.timeline-section.is-paired .process-steps'
           )
@@ -77,8 +81,33 @@ function Services() {
           return
         }
 
+
+        if (revealSections.length) {
+          gsap.set(revealSections, { opacity: 0, y: 28 })
+          ScrollTrigger.batch(revealSections, {
+            start: 'top 85%',
+            onEnter: (batch) => {
+              gsap.to(batch, {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: 'power2.out',
+                stagger: 0.12,
+              })
+            },
+            onLeaveBack: (batch) => {
+              gsap.to(batch, {
+                opacity: 0,
+                y: 28,
+                duration: 0.4,
+                ease: 'power2.in',
+                stagger: 0.08,
+              })
+            },
+          })
+        }
+
         if (pairedSections.length) {
-          const isMobile = window.matchMedia('(max-width: 1024px)').matches
           pairedSections.forEach((section) => {
             const rows = gsap.utils.toArray(
               section.querySelectorAll('.process-row')
@@ -103,108 +132,65 @@ function Services() {
             })
             gsap.set(rows, { '--line-scale': 0, '--line-opacity': 0 })
 
-             if (isMobile) {
-               ScrollTrigger.batch(rows, {
-                 start: 'top 100%',
-                 onEnter: (batch) => {
-                   batch.forEach((row) => {
-                     const left = row.querySelector('.process-steps.left')
-                     const right = row.querySelector('.process-steps.right')
-                     gsap.to(row, {
-                       '--line-scale': 1,
-                       '--line-opacity': 1,
-                       duration: 0.35,
-                       ease: 'power2.out',
-                     })
-                     if (left) {
-                       gsap.to(left, {
-                         opacity: 1,
-                         x: 0,
-                         duration: 0.5,
-                         ease: 'power2.out',
-                       })
-                     }
-                     if (right) {
-                       gsap.to(right, {
-                         opacity: 1,
-                         x: 0,
-                         duration: 0.5,
-                         ease: 'power2.out',
-                       })
-                     }
-                   })
-                 },
-                 onLeaveBack: (batch) => {
-                   batch.forEach((row) => {
-                     const left = row.querySelector('.process-steps.left')
-                     const right = row.querySelector('.process-steps.right')
-                     gsap.to(row, {
-                       '--line-scale': 0,
-                       '--line-opacity': 0,
-                       duration: 0.25,
-                       ease: 'power2.in',
-                     })
-                     if (left) {
-                       gsap.to(left, {
-                         opacity: 0,
-                         x: -60,
-                         duration: 0.35,
-                         ease: 'power2.in',
-                       })
-                     }
-                     if (right) {
-                       gsap.to(right, {
-                         opacity: 0,
-                         x: 60,
-                         duration: 0.35,
-                         ease: 'power2.in',
-                       })
-                     }
-                   })
-                 },
-               })
-             } else {
-              const stepDistance = Math.max(100, window.innerHeight * 0.16)
-               const navOffset = 96
-               const tl = gsap.timeline({
-                 scrollTrigger: {
-                   trigger: section,
-                   start: `top top+=${navOffset}`,
-                   end: `+=${items.length * stepDistance}`,
-                    pin: true,
-                    pinSpacing: true,
-                    scrub: 0.25,
-                    anticipatePin: 1,
-                 },
-               })
-
-              rows.forEach((row) => {
-                const left = row.querySelector('.process-steps.left')
-                const right = row.querySelector('.process-steps.right')
-                tl.to(row, {
-                  '--line-scale': 1,
-                  '--line-opacity': 1,
-                  duration: 0.35,
-                  ease: 'power2.out',
+            ScrollTrigger.batch(rows, {
+              start: 'top 85%',
+              onEnter: (batch) => {
+                batch.forEach((row) => {
+                  const left = row.querySelector('.process-steps.left')
+                  const right = row.querySelector('.process-steps.right')
+                  gsap.to(row, {
+                    '--line-scale': 1,
+                    '--line-opacity': 1,
+                    duration: 0.35,
+                    ease: 'power2.out',
+                  })
+                  if (left) {
+                    gsap.to(left, {
+                      opacity: 1,
+                      x: 0,
+                      duration: 0.5,
+                      ease: 'power2.out',
+                    })
+                  }
+                  if (right) {
+                    gsap.to(right, {
+                      opacity: 1,
+                      x: 0,
+                      duration: 0.5,
+                      ease: 'power2.out',
+                    })
+                  }
                 })
-                if (left) {
-                  tl.to(left, {
-                    opacity: 1,
-                    x: 0,
-                    duration: 0.6,
-                    ease: 'power2.out',
+              },
+              onLeaveBack: (batch) => {
+                batch.forEach((row) => {
+                  const left = row.querySelector('.process-steps.left')
+                  const right = row.querySelector('.process-steps.right')
+                  gsap.to(row, {
+                    '--line-scale': 0,
+                    '--line-opacity': 0,
+                    duration: 0.25,
+                    ease: 'power2.in',
                   })
-                }
-                if (right) {
-                  tl.to(right, {
-                    opacity: 1,
-                    x: 0,
-                    duration: 0.6,
-                    ease: 'power2.out',
-                  })
-                }
-              })
-            }
+                  if (left) {
+                    gsap.to(left, {
+                      opacity: 0,
+                      x: -60,
+                      duration: 0.35,
+                      ease: 'power2.in',
+                    })
+                  }
+                  if (right) {
+                    gsap.to(right, {
+                      opacity: 0,
+                      x: 60,
+                      duration: 0.35,
+                      ease: 'power2.in',
+                    })
+                  }
+                })
+              },
+            })
           })
         }
 
@@ -252,11 +238,15 @@ function Services() {
 
 
   return (
-    <section className="services" id="services" key={language}>
-      <div className="mx-auto w-11/12 max-w-6xl">
-        <div className="section-heading">
-          <p className="eyebrow">{t('services.steps.eyebrow')}</p>
-          <h2>{t('services.steps.title')}</h2>
+    <section className="relative" id="services" key={language}>
+      <div className="mx-auto w-11/12 max-w-6xl services-section py-[var(--section-spacing)]">
+        <div className="mb-10 max-w-4xl">
+          <p className="mb-4 text-xs uppercase tracking-widest text-slate-400">
+            {t('services.steps.eyebrow')}
+          </p>
+          <h2 className="mb-4 text-3xl md:text-4xl font-semibold tracking-tight font-['Space_Mono',_IBM_Plex_Mono,_monospace]">
+            {t('services.steps.title')}
+          </h2>
         </div>
         <div className="grid gap-6 lg:grid-cols-4">
           {steps.map((step, index) => (
@@ -310,14 +300,11 @@ function Services() {
                   />
                 )}
               </div>
-              <h3 className="mb-3 font-mono tracking-tight">
-                <span
-                  className={`mb-2 block text-xs uppercase tracking-widest ${
-                    index % 2 === 0 ? 'text-neutral-900' : 'text-[#F6C94A]'
-                  }`}
-                >
-                  {String(index + 1).padStart(2, '0')}
-                </span>
+              <h3
+                className={`text-lg font-semibold mb-5 ${
+                  index % 2 === 0 ? 'text-neutral-900' : 'text-[#F6C94A]'
+                }`}
+              >
                 {step.title}
               </h3>
               <p className={index % 2 === 0 ? 'text-neutral-800' : 'text-slate-300'}>
@@ -327,10 +314,12 @@ function Services() {
           ))}
         </div>
       </div>
-        <section className="timeline-section widget_1744292857459 is-paired">
-          <div className="container">
-            <div className="heading">
-              <h2>{timelineTitle}</h2>
+        <section className="timeline-section widget_1744292857459 is-paired services-section">
+          <div className="mx-auto w-11/12 max-w-6xl">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight font-['Space_Mono',_IBM_Plex_Mono,_monospace]">
+                {timelineTitle}
+              </h2>
             </div>
             <div className="main-content">
               {timelinePairs.map((pair, rowIndex) => (
@@ -374,10 +363,12 @@ function Services() {
         </div>
           </div>
         </section>
-        <section className="timeline-section widget_1744292857459 is-paired">
-          <div className="container">
-            <div className="heading">
-              <h2>{fabricationTitle}</h2>
+        <section className="timeline-section widget_1744292857459 is-paired services-section">
+          <div className="mx-auto w-11/12 max-w-6xl">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight font-['Space_Mono',_IBM_Plex_Mono,_monospace]">
+                {fabricationTitle}
+              </h2>
             </div>
             <div className="main-content">
               {timelinePairsFabrication.map((pair, rowIndex) => (
@@ -421,26 +412,48 @@ function Services() {
             </div>
           </div>
         </section>
-        <section className="assembly-features" aria-labelledby="assembly-features-title">
-          <div className="container">
-            <div className="assembly-features-heading">
-              <h2 id="assembly-features-title">{assemblyFeatures.title}</h2>
+        <section className="services-section w-full text-white py-24 px-6" aria-labelledby="assembly-capabilities-title">
+          <div className="mx-auto w-11/12 max-w-6xl">
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 id="assembly-capabilities-title" className="text-4xl md:text-4xl font-semibold tracking-tight font-['Space_Mono',_IBM_Plex_Mono,_monospace]">
+                {assemblyCapabilities.title}
+              </h2>
+              <p className="mt-6 text-white/60 leading-relaxed">
+                {assemblyCapabilities.lead}
+              </p>
             </div>
-            <div className="assembly-features-grid">
-              {assemblyFeatures.groups.map((group) => (
-                <div key={group.title} className="assembly-feature-group">
-                  <div className="assembly-feature-title">
-                    <h3>{group.title}</h3>
-                    <span className="assembly-feature-divider" aria-hidden="true" />
-                  </div>
-                  <ul className="assembly-feature-list">
-                    {group.items.map((item) => (
-                      <li key={item}>
-                        <span className="feature-check" aria-hidden="true" />
-                        <span>{item}</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+              {assemblyCapabilities.sections.map((section) => (
+                <div
+                  key={section.title}
+                  className="min-h-[260px] rounded-[24px] border border-[rgba(255,255,255,0.06)] bg-[#1c1c1c] px-[26px] py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition hover:border-[#F6C94A]/40"
+                >
+                  <h3 className="text-lg font-semibold mb-2 text-[#F6C94A]">
+                    {section.title}
+                  </h3>
+                  {section.description ? (
+                    <p className="mb-4 text-sm text-white/70">
+                      {section.description}
+                    </p>
+                  ) : null}
+                  <ul className="space-y-3 text-sm text-white/80">
+                    {section.items.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="text-[#F6C94A]">•</span>
+                        {item}
                       </li>
                     ))}
                   </ul>
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20 text-center">
+              {assemblyCapabilities.stats.map((stat) => (
+                <div key={stat.label}>
+                  <div className="text-4xl font-semibold text-[#F6C94A]">
+                    {stat.value}
+                  </div>
+                  <p className="text-white/60 mt-2">{stat.label}</p>
                 </div>
               ))}
             </div>

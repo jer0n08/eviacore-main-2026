@@ -24,21 +24,22 @@ const translations = {
     home: {
       overview: {
         eyebrow: 'Plateforme',
-        title: "Avec l'App EVIACORE\nUploadez. Validez. Produisez.",
+        title: "Uploadez. Validez. Produisez.",
         lead:
-          "Déposez votre BOM, ajustez volumes et délais, et pilotez votre fabrication depuis un espace centralisé conçu pour fluidifier chaque étape.",
+          "Déposez votre BOM, ajustez vos quantités et délais, et pilotez votre fabrication depuis un espace centralisé conçu pour fluidifier chaque étape.",
         cards: [
+                {
+            title: 'Déposez votre BOM',
+            text: "L'App EVIACORE vérifie les disponibilités de vos composants chez nos fournisseurs en temps réel.",
+          },
           {
             title: 'Prix instantané',
-            text: "Ajustez volume et délai pour voir le prix évoluer en temps réel.",
+            text: 'Ajustez vos quantités et vos délais pour voir le prix se mettre à jour instantanément.',
           },
-          {
-            title: 'Un seul espace projet',
-            text: 'Toutes vos versions, validations et documents techniques au même endroit.',
-          },
+    
           {
             title: 'Suivi live',
-            text: "Suivez chaque étape de votre projet en temps réel.",
+            text: "Visualisez l’avancement de votre projet à chaque étape.",
           },
         ],
       },
@@ -84,6 +85,12 @@ const translations = {
           },
         ],
       },
+      platform: {
+        eyebrow: 'Plateforme',
+        title: 'Uploadez. Validez. Produisez.',
+        lead:
+          "Avec l'App EVIACORE Déposez votre BOM, ajustez volumes et délais, et pilotez votre fabrication depuis un espace centralisé conçu pour fluidifier chaque étape.",
+      },
       faq: {
         eyebrow: 'FAQ',
         title: 'Questions fréquentes avant de lancer votre carte.',
@@ -127,20 +134,20 @@ const translations = {
         title: 'Pilotez la fabrication en 4 étapes.',
         items: [
           {
-            title: 'Configurez votre projet en ligne',
-            text: 'Plateforme web EVIACORE®. Chiffrage en ligne.',
+            title: 'Préparez votre projet ',
+            text: "Depuis l'app EVIACORE®. Configurez et chiffrez votre projet en ligne.",
           },
           {
-            title: 'Validez vos quantités et délais',
-            text: 'Connectée aux plus grands fournisseurs. Le meilleur prix en quelques minutes.',
+            title: 'Analyse votre BOM',
+            text: "Notre app analyse automatiquement votre BOM et calcule le coût d’assemblage de votre projet.",
           },
           {
-            title: 'Lancez et suivez la fabrication',
-            text: 'Commandez en ligne en un clic. Simple et rapide. Notre équipe vous accompagne.',
+            title: 'Lancez votre production et suivez chaque étape.',
+            text: 'Passez commande en ligne. Simple, rapide, avec l’appui de notre équipe.',
           },
           {
-            title: 'Recevez votre commande en Express',
-            text: 'Suivez votre livraison grâce au tracking de votre colis partout dans le monde.',
+            title: 'Livraison express J+1 avant 18h.',
+            text: "Grâce au tracking sur l'app, suivez votre colis en temps réel.",
           },
         ],
       },
@@ -162,24 +169,24 @@ const translations = {
         title: 'Création du projet en ligne, de la config à la validation',
         items: [
           {
-            title: 'Spécification PCB et contraintes clés',
-            text: 'Définissez votre PCB standard ou complexe : dimensions, 1 à 24 couches, stackup, impédances et options critiques.',
+            title: 'Spécification PCB',
+            text: 'Définissez votre PCB standard ou complexe : dimensions, 1 à 16 couches, stackup, impédances et options critiques.',
           },
           {
             title: 'Importation de la nomenclature (BOM)',
-            text: "Importez votre BOM : l'algorithme EVIACORE sélectionne les composants disponibles, compatibles et au meilleur prix.",
+            text: "Importez votre BOM, l'app EVIACORE s'assure que les composants soient disponibles.",
           },
           {
             title: 'Fichiers de fabrication et placement',
             text: "Chargez Gerbers/ODB++, plan d'implantation et fichier de placement pour un dossier complet et exploitable.",
           },
           {
-            title: 'Price Optimizer pour piloter le coût',
+            title: 'Obtenez le chiffrage de votre projet',
             text: "EVIACORE calcule le coût selon délai et quantité, en s'appuyant sur les meilleures offres fournisseurs.",
           },
           {
             title: 'Validation, devis et commande en ligne',
-            text: 'Validez et payez en ligne, éditez un devis PDF, partagez votre panier en interne si besoin.',
+            text: 'Validez et payez en ligne, par carte ou virement bancaire.',
           },
           {
             title: 'Suivi fabrication & livraison en temps réel',
@@ -217,12 +224,62 @@ const translations = {
           },
           {
             title: 'Inspection visuelle selon IPC',
-            text: 'Contrôle visuel systématique selon les critères des normes IPC.',
+            text: 'Contrôle visuel selon les critères des normes IPC.',
           },
           {
             title: 'Emballage antistatique et expédition express',
             text: 'Protection antistatique, conditionnement soigné et expédition express.',
           },
+        ],
+      },
+      assemblyCapabilities: {
+        title: "Capacités techniques",
+        lead:
+          '',
+        sections: [
+          {
+            title: 'Technologies PCB supportées',
+            description:
+              'Assemblage de circuits imprimés standards et techniques pour prototypes et petites séries industrielles.',
+            items: [
+              "Formats PCB : 5 x 5 mm à 430 x 508 mm",
+              'Jusqu’à 16 couches', 
+              'Matériaux : FR4 · CEM · Rogers',
+         
+              'Cartes Rigid · Flex · Rigid‑Flex',
+                   'Stackup et impédances controlées possibles',
+            ],
+          },
+ 
+          {
+            title: 'Assemblage CMS',
+            description:
+              'Assemblage automatisé de cartes électroniques avec technologies CMS modernes.',
+            items: [
+              'CMS, Traversant, Press‑Fit',
+              'Package : BGA · LGA · QFN ...',
+              "Composants miniatures jusqu'au 01005",
+              "Jetting de pâte à braser par éjecteur - dépot précis jusqu'à 240µm",
+              
+            ],
+          },
+          {
+            title: 'Inspection & qualité',
+            description:
+              "Contrôles réalisés selon les bonnes pratiques de l'industrie électronique et les critères IPC.",
+            items: [
+              
+              'Inspection Rayons X',
+              'Contrôle visuel',
+              'Validation assemblages critiques',
+              'Traçabilité projet',
+            ],
+          },
+        ],
+        stats: [
+          { value: '01005', label: 'Composants minimum' },
+          { value: '240µm', label: 'Fine pitch' },
+          { value: 'RX', label: 'Inspection' },
         ],
       },
       assemblyFeatures: {
@@ -238,7 +295,7 @@ const translations = {
               'Rigid, SMI, Rigid-Flex',
               'ENIG (NiAu), HAL, Sn, Ag',
               'Vernis vert, blanc, noir, rouge...',
-              '1 à 24 couches',
+              '1 à 16 couches',
               'Via filled, µVia laser, via borgnes/enterrés',
             ],
           },
@@ -246,9 +303,9 @@ const translations = {
             title: 'Assemblage',
             items: [
               'CMS, Traversant, PressFit',
-              '2 Machines de placement Mycronics',
+              '2 Machines de placement Mycronic',
               '21 000 composants/heure par machine',
-              'BGA, µBGA, LGA, QFN, 0201...',
+              'BGA, LGA, QFN, 01005...',
               'Fine Pitch 0,3mm',
             ],
           },
@@ -296,154 +353,234 @@ const translations = {
     footer: {
       tagline: '',
       address: '',
-      cgv: 'CGV',
+      cgv: 'Conditions Générales de vente',
       legal: 'Mentions légales',
-      privacy: 'Données personnelles',
+      privacy: 'Règles de Confidentialité',
       ctaText: 'Vous avez un besoin de PCBA ? Connectez-vous ici.',
       rights:
         '© 2026 EVIACORE® — Marque enregistrée — Tous droits réservés\n8 Allée Isaac Newton – 33650 Martillac\nSAS au capital de 30 000 € – RCS Bordeaux 994 666 436',
     },
     cgvPage: {
       eyebrow: 'CGV',
-      title: 'CONDITIONS GÉNÉRALES DE VENTE',
-      lead: 'Version en vigueur à la date 28/02/2026',
+      title: 'CONDITIONS GÉNÉRALES DE VENTE\nEVIACORE®',
+      lead: '',
       sections: [
         {
           title: 'Article 1 – Objet',
           lines: [
-            'Les présentes Conditions Générales de Vente ont pour objet de définir les modalités selon lesquelles la société EVIACORE® réalise, auprès d’une clientèle exclusivement professionnelle, des prestations d’assemblage électronique (PCBA), d’approvisionnement de composants, d’intégration technique et de services industriels associés.',
-            'Les prestations sont exécutées uniquement sur la base des éléments techniques fournis par le Client dans le cadre de son activité professionnelle. En conséquence, le Client agit en qualité de professionnel averti et reconnaît disposer des compétences nécessaires à la définition et à la validation de son produit.',
+            'Les présentes Conditions Générales de Vente ont pour objet de définir les modalités selon lesquelles la société EVIACORE réalise, auprès d’une clientèle exclusivement professionnelle, des prestations industrielles comprenant notamment :',
+            '· l’assemblage de cartes électroniques (PCBA)',
+            '· les opérations de rework électronique',
+            '· l’approvisionnement de composants',
+            '· les services industriels associés.',
+            'Les prestations sont réalisées exclusivement sur la base des éléments techniques fournis par le Client dans le cadre de son activité professionnelle.',
+            'Le Client agit en qualité de professionnel averti, au sens de l’article liminaire du Code de la consommation, et reconnaît disposer des compétences nécessaires à la conception, à la validation et à l’exploitation industrielle de son produit.',
           ],
         },
         {
-          title: 'Article 2 – Acceptation et opposabilité',
+          title: 'Article 2 – Acceptation des conditions',
           lines: [
-            'Toute commande, signature de devis, validation électronique ou paiement d’acompte emporte acceptation pleine et entière des présentes CGV, lesquelles prévalent sur tout document émanant du Client, notamment ses conditions générales d’achat, sauf accord écrit exprès d’EVIACORE.',
-            'Aucune tolérance ou pratique commerciale ne saurait être interprétée comme une renonciation aux présentes dispositions.',
+            'Toute commande, signature de devis, validation électronique sur la plateforme ou paiement d’acompte emporte acceptation pleine et entière des présentes CGV.',
+            'Les présentes CGV prévalent sur tout document émanant du Client, notamment ses conditions générales d’achat, sauf accord écrit exprès d’EVIACORE.',
+            'La validation d’une commande via la plateforme en ligne constitue une acceptation électronique ayant la même valeur qu’une signature manuscrite.',
           ],
         },
         {
           title: 'Article 3 – Formation de la commande',
           lines: [
-            'La commande devient ferme et définitive dès sa validation écrite par le Client.',
-            'Le Client s’engage à fournir l’ensemble des données nécessaires à la production, notamment :',
-            '· nomenclature complète (BOM),',
-            '· fichiers Gerber,',
-            '· fichiers Pick & Place,',
-            '· plans, instructions et spécifications techniques.',
-            'Le Client demeure seul responsable de l’exactitude, de la cohérence et de l’exploitabilité industrielle des informations transmises.',
+            'La commande devient ferme et définitive dès validation écrite par le Client ou validation électronique sur la plateforme.',
+            'Le Client s’engage à fournir l’ensemble des informations nécessaires à la production, notamment :',
+            '· nomenclature complète (BOM)',
+            '· fichiers Gerber',
+            '· fichiers Pick & Place',
+            '· plans et spécifications techniques.',
+            'Le Client demeure seul responsable :',
+            '· de la conception électronique',
+            '· de la cohérence technique des fichiers transmis',
+            '· de la validité industrielle du produit.',
             'EVIACORE n’est tenue à aucune obligation de vérification de conception ou d’ingénierie produit.',
-            'Toute modification postérieure à la validation pourra entraîner une révision des prix et délais.',
+            'Toute modification postérieure à la validation de la commande pourra entraîner une révision des prix et des délais.',
           ],
         },
         {
-          title: 'Article 4 – Nature de l’intervention et statut industriel',
+          title: 'Article 4 – Statut de sous-traitant industriel',
           lines: [
-            'EVIACORE intervient exclusivement en qualité de sous-traitant industriel chargé de l’exécution matérielle de l’assemblage.',
+            'EVIACORE intervient exclusivement en qualité de sous‑traitant industriel chargé de l’assemblage électronique.',
             'Le Client conserve la qualité de fabricant légal du produit et assume l’entière responsabilité :',
-            'de la conception électronique,',
-            '· du schéma et du routage PCB,',
-            '· du dimensionnement,',
-            '· de la conformité réglementaire,',
-            '· de la sécurité du produit,',
+            '· de la conception électronique',
+            '· du schéma et du routage PCB',
+            '· du dimensionnement',
+            '· de la conformité réglementaire',
+            '· de la sécurité du produit',
             '· de son utilisation finale.',
-            'Les prestations réalisées ne constituent en aucun cas une validation fonctionnelle globale du produit sauf accord écrit spécifique.',
+            'Les prestations d’EVIACORE ne constituent en aucun cas une validation globale du produit.',
           ],
         },
         {
-          title: 'Article 5 – Composants électroniques',
+          title: 'Article 5 – Tests et validation',
           lines: [
-            'Lorsque les composants sont fournis par le Client, celui‑ci demeure seul responsable de leur authenticité, qualité, compatibilité, conditionnement et conformité technique.',
+            'Sauf stipulation contraire expressément mentionnée dans le devis ou la commande, les prestations d’EVIACORE n’incluent aucune validation fonctionnelle complète du produit.',
+            'Les éventuels tests réalisés par EVIACORE ont uniquement pour objet de vérifier la conformité du processus d’assemblage.',
+            'La validation finale du produit relève exclusivement de la responsabilité du Client.',
+          ],
+        },
+        {
+          title: 'Article 6 – Composants électroniques',
+          lines: [
+            'Lorsque les composants sont fournis par le Client, celui‑ci demeure seul responsable :',
+            '· de leur authenticité',
+            '· de leur qualité',
+            '· de leur compatibilité',
+            '· de leur conditionnement',
+            '· de leur conformité technique.',
             'EVIACORE ne saurait être tenue responsable des défaillances résultant de ces éléments.',
-            'Lorsque les composants sont approvisionnés par EVIACORE, les achats sont réalisés sur la base stricte des références communiquées par le Client.',
-            'La société agit comme intermédiaire d’approvisionnement technique et ne peut être tenue responsable d’un défaut fabricant, d’une erreur fournisseur ou d’un vice non raisonnablement détectable lors des contrôles standards.',
+            'Lorsque les composants sont approvisionnés par EVIACORE, ceux‑ci sont achetés sur la base stricte des références communiquées par le Client.',
+            'EVIACORE agit comme intermédiaire d’approvisionnement et ne saurait être tenue responsable :',
+            '· d’un défaut de fabrication',
+            '· d’une erreur fournisseur',
+            '· d’un vice non détectable lors des contrôles standards.',
           ],
         },
         {
-          title: 'Article 6 – Délais de réalisation',
+          title: 'Article 7 – Délais',
           lines: [
-            'Les délais indiqués sont donnés à titre indicatif sauf engagement écrit contraire.',
-            'Les retards résultant notamment de ruptures d’approvisionnement, tensions du marché électronique, retards logistiques, transports ou formalités douanières entraînent automatiquement un report équivalent sans pénalité ni indemnité.',
+            'Les délais indiqués sont donnés à titre indicatif, sauf engagement écrit contraire.',
+            'Les retards liés notamment à :',
+            '· ruptures de composants',
+            '· tensions du marché électronique',
+            '· retards fournisseurs',
+            '· retards logistiques',
+            '· transport',
+            'ne pourront donner lieu à aucune pénalité ni indemnité.',
           ],
         },
         {
-          title: 'Article 7 – Absence de droit de rétractation',
+          title: 'Article 8 – Absence de droit de rétractation',
           lines: [
-            'Les prestations étant réalisées sur mesure selon les spécifications propres du Client et dans un cadre exclusivement professionnel, aucun droit de rétractation ne s’applique.',
-            'Conformément aux dispositions des articles L.221‑3 et L.221‑28 du Code de la consommation, les contrats conclus entre professionnels ainsi que les prestations réalisées selon des spécifications personnalisées ne bénéficient d’aucun droit de rétractation.',
-            'Toute commande devient irrévocable dès le lancement des approvisionnements, de la préparation technique ou de la production. Les frais engagés restent intégralement dus.',
+            'Les prestations étant réalisées sur mesure pour une clientèle professionnelle, aucun droit de rétractation ne s’applique conformément aux articles L221‑3 et L221‑28 du Code de la consommation.',
+            'Toute commande devient irrévocable dès le lancement des approvisionnements ou de la production.',
           ],
         },
         {
-          title: 'Article 8 – Réserve de propriété',
+          title: 'Article 9 – Réserve de propriété',
           lines: [
-            'Les produits livrés demeurent la propriété pleine et entière d’EVIACORE jusqu’au paiement intégral des sommes dues, en principal et accessoires.',
+            'Les produits livrés demeurent la propriété pleine et entière d’EVIACORE jusqu’au paiement intégral des sommes dues.',
           ],
         },
         {
-          title: 'Article 9 – Livraison, transfert des risques et assurance transport',
+          title: 'Article 10 – Livraison et transport',
           lines: [
-            'Les risques sont transférés au Client lors de la remise des marchandises au transporteur ou lors de leur mise à disposition.',
-            'Afin de sécuriser les expéditions, EVIACORE bénéficie d’une assurance transport couvrant les envois de colis contre les pertes ou dommages survenus durant l’acheminement, dans les limites et conditions prévues par le contrat d’assurance.',
-            'En cas d’avarie ou de perte, le Client s’engage à émettre toutes réserves nécessaires auprès du transporteur conformément à la réglementation applicable.',
-            'L’indemnisation éventuelle ne pourra excéder les plafonds prévus par ladite assurance.',
-            'Cette assurance constitue une mesure de sécurisation logistique et ne saurait étendre la responsabilité contractuelle d’EVIACORE.',
+            'Le transfert des risques intervient lors de la remise des marchandises au transporteur ou lors de leur mise à disposition dans les locaux d’EVIACORE pour enlèvement par le Client ou son transporteur.',
+            'Le Client est tenu de vérifier l’état des colis lors de la livraison en présence du transporteur.',
+            'En cas d’avarie apparente, le Client devra :',
+            '· refuser la livraison',
+            '· formuler des réserves précises et détaillées sur le bon de livraison.',
+            'Ces réserves devront être confirmées au transporteur dans un délai de trois (3) jours conformément à l’article L133‑3 du Code de commerce.',
+            'À défaut de réserves, les marchandises seront réputées livrées conformes et en bon état.',
           ],
         },
         {
-          title: 'Article 10 – Contrôle préalable et mise sous tension',
+          title: 'Article 11 – Assurance transport',
           lines: [
-            'Le Client doit procéder, avant toute mise sous tension ou intégration dans un système final, à un contrôle complet incluant inspection visuelle, vérifications électriques et validation fonctionnelle.',
+            'EVIACORE bénéficie d’une assurance transport couvrant les marchandises expédiées, dans les limites et plafonds prévus par le contrat d’assurance.',
+            'L’indemnisation éventuelle ne pourra excéder les montants prévus par ladite assurance.',
+          ],
+        },
+        {
+          title: 'Article 12 – Contrôle avant mise sous tension',
+          lines: [
+            'Avant toute mise sous tension ou intégration dans un système final, le Client doit procéder à :',
+            '· un contrôle visuel',
+            '· des vérifications électriques',
+            '· une validation fonctionnelle.',
             'Toute utilisation sans ces vérifications engage exclusivement la responsabilité du Client.',
           ],
         },
         {
-          title: 'Article 11 – Réclamations et garantie',
+          title: 'Article 13 – Réclamations',
           lines: [
-            'Toute réclamation doit être formulée par écrit dans un délai de cinq (5) jours ouvrés suivant la réception et avant toute modification ou utilisation du produit.',
-            'La garantie est strictement limitée aux défauts d’assemblage démontrés et se limite, au choix d’EVIACORE, à la réparation, au remplacement ou à l’émission d’un avoir.',
+            'Toute réclamation doit être formulée par écrit dans un délai de cinq (5) jours ouvrés suivant la réception.',
+            'Aucune réclamation ne sera recevable après modification, utilisation ou intégration du produit.',
           ],
         },
         {
-          title: 'Article 12 – Limitation de responsabilité',
+          title: 'Article 14 – Garantie',
           lines: [
-            'La responsabilité totale d’EVIACORE, toutes causes confondues, est strictement limitée au montant hors taxes de la prestation concernée.',
-            'Sont expressément exclus tous dommages indirects ou immatériels, notamment :',
-            'pertes d’exploitation, pertes de production, pertes de chiffre d’affaires, rappel produit, pénalités contractuelles ou préjudices commerciaux.',
+            'La garantie est strictement limitée aux défauts d’assemblage démontrés.',
+            'Elle se limite, au choix d’EVIACORE, à :',
+            '· la réparation',
+            '· le remplacement',
+            '· l’émission d’un avoir.',
           ],
         },
         {
-          title: 'Article 13 – Assurance Responsabilité Civile Professionnelle',
+          title: 'Article 15 – Limitation de responsabilité',
           lines: [
-            'EVIACORE déclare être titulaire d’une assurance Responsabilité Civile Professionnelle couvrant les conséquences pécuniaires de sa responsabilité dans le cadre strict de son activité.',
-            'Cette assurance ne saurait avoir pour effet d’étendre les obligations contractuelles définies aux présentes CGV.',
-            'Une attestation peut être fournie sur demande.',
+            'La responsabilité totale d’EVIACORE est strictement limitée au montant hors taxes de la prestation concernée.',
+            'Sont exclus tous dommages indirects ou immatériels, notamment :',
+            '· pertes d’exploitation',
+            '· pertes de production',
+            '· pertes de chiffre d’affaires',
+            '· rappel produit',
+            '· pénalités contractuelles.',
           ],
         },
         {
-          title: 'Article 14 – Confidentialité',
+          title: 'Article 16 – Confidentialité',
           lines: [
-            'EVIACORE s’engage à préserver la confidentialité des documents techniques et informations transmises par le Client.',
-            'Un accord de confidentialité spécifique pourra être conclu à première demande.',
+            'EVIACORE s’engage à préserver la confidentialité des documents techniques, fichiers, informations industrielles et données transmis par le Client dans le cadre de l’exécution des prestations.',
+            'Ces informations sont utilisées exclusivement pour les besoins de la production et ne sont pas divulguées à des tiers.',
+            'Dans ce cadre, EVIACORE pourra être amenée à faire intervenir des partenaires industriels ou techniques nécessaires à la réalisation des prestations. Ces partenaires sont soumis aux mêmes obligations de confidentialité.',
+            'Un accord de confidentialité (NDA – Non‑Disclosure Agreement) peut être signé entre les parties sur simple demande du Client.',
           ],
         },
         {
-          title: 'Article 15 – Force majeure',
+          title: 'Article 17 – Propriété intellectuelle',
           lines: [
-            'EVIACORE ne pourra être tenue responsable de l’inexécution ou du retard résultant d’un événement de force majeure tel que reconnu par le droit français.',
+            'Les fichiers, plans et documents techniques fournis par le Client demeurent sa propriété.',
+            'Le Client garantit disposer de l’ensemble des droits nécessaires et garantit EVIACORE contre tout recours de tiers relatif à la propriété intellectuelle.',
           ],
         },
         {
-          title: 'Article 16 – Divisibilité',
+          title: 'Article 18 – Tolérances de production',
           lines: [
-            'Si une disposition des présentes CGV était déclarée invalide, les autres stipulations demeureraient pleinement applicables.',
+            'Compte tenu des contraintes industrielles d’assemblage électronique, une consommation partielle de composants peut survenir lors :',
+            '· des réglages machines',
+            '· des tests de production',
+            '· des cartes de validation.',
+            'Ces pertes sont considérées comme normales dans un processus industriel.',
           ],
         },
         {
-          title: 'Article 17 – Droit applicable et juridiction compétente',
+          title: 'Article 19 – Tolérance de quantité',
+          lines: [
+            'Une tolérance de ±5 % sur les quantités produites peut être appliquée.',
+            'La facturation sera basée sur les quantités réellement produites.',
+          ],
+        },
+        {
+          title: 'Article 20 – Préparation des composants',
+          lines: [
+            'Lorsque les composants fournis par le Client nécessitent des opérations de préparation (reconditionnement, rebobinage, tri ou manipulation spécifique), EVIACORE se réserve le droit de facturer le temps de préparation correspondant.',
+          ],
+        },
+        {
+          title: 'Article 21 – Force majeure',
+          lines: [
+            'EVIACORE ne pourra être tenue responsable de l’inexécution de ses obligations en cas d’événement de force majeure au sens de l’article 1218 du Code civil.',
+          ],
+        },
+        {
+          title: 'Article 22 – Nullité partielle',
+          lines: [
+            'Si une disposition des présentes CGV est déclarée nulle ou inapplicable, les autres dispositions demeurent pleinement applicables.',
+          ],
+        },
+        {
+          title: 'Article 23 – Juridiction',
           lines: [
             'Les présentes CGV sont régies par le droit français.',
-            'Tout litige relatif à leur interprétation ou exécution relève de la compétence exclusive du Tribunal de Commerce de Bordeaux, y compris en cas de pluralité de défendeurs ou d’appel en garantie.',
+            'Tout litige relève de la compétence exclusive du Tribunal de Commerce de Bordeaux.',
           ],
         },
       ],
@@ -452,6 +589,7 @@ const translations = {
       eyebrow: 'Données personnelles',
       title: 'POLITIQUE DE CONFIDENTIALITÉ – PROTECTION DES DONNÉES PERSONNELLES (RGPD)',
       lead: 'Version en vigueur à la date 28/02/2026',
+      badge: 'Conformité RGPD',
       sections: [
         {
           title: '1 — Responsable du traitement',
@@ -781,6 +919,12 @@ const translations = {
           },
         ],
       },
+      platform: {
+        eyebrow: 'Platform',
+        title: 'Upload. Validate. Produce.',
+        lead:
+          'With the EVIACORE App upload your BOM, fine-tune volumes and lead times, and drive your manufacturing from a centralized space built to streamline every step.',
+      },
       faq: {
         eyebrow: 'FAQ',
         title: 'Common questions before launching your board.',
@@ -858,12 +1002,12 @@ const translations = {
         title: 'Create your project online, from configuration to validation',
         items: [
           {
-            title: 'PCB specification and key constraints',
-            text: 'Define your standard or complex PCB: dimensions, 1 to 24 layers, stackup, impedance, and critical options.',
+            title: 'PCB specification',
+            text: 'Define your standard or complex PCB: dimensions, 1 to 16 layers, stackup, impedance, and critical options.',
           },
           {
             title: 'Bill of materials (BOM) import',
-            text: 'Import your BOM: the EVIACORE algorithm selects available, compatible components at the best price.',
+            text: 'Import your BOM, the EVIACORE app makes sure the components available.',
           },
           {
             title: 'Manufacturing and placement files',
@@ -912,7 +1056,7 @@ const translations = {
           },
           {
             title: 'IPC visual inspection',
-            text: 'Systematic visual inspection according to IPC standards.',
+            text: 'Visual inspection according to IPC standards.',
           },
           {
             title: 'Anti-static packaging and express shipping',
@@ -920,20 +1064,68 @@ const translations = {
           },
         ],
       },
+      assemblyCapabilities: {
+        title: 'Assembly capabilities',
+        lead:
+          '',
+        sections: [
+          {
+            title: 'Compatible PCBs',
+            description:
+              'Assembly of standard and advanced PCBs for prototypes and small industrial batches.',
+            items: [
+              'Dimensions: 10 mm → 400 mm',
+              'Up to 16 layers',
+              'Custom stackup',
+              'FR4 · CEM · Rogers',
+              'Rigid · Flex · Rigid-Flex',
+            ],
+          },
+          {
+            title: 'Electronic assembly',
+            description:
+              'Automated SMT assembly with modern equipment and traceable processes.',
+            items: [
+              'SMT / Through-hole / Press-Fit',
+              'BGA · LGA · QFN ...',
+              '01005 components',
+              'Fine pitch 240µm',
+              'Prototypes and small batches',
+            ],
+          },
+          {
+            title: 'Inspection & quality',
+            description:
+              'Quality checks aligned with IPC standards and electronics industry best practices.',
+            items: [
+              'AOI optical inspection',
+              'X-ray inspection',
+              'Visual inspection',
+              'Critical assembly validation',
+              'Project traceability',
+            ],
+          },
+        ],
+        stats: [
+          { value: '01005', label: 'Minimum component size' },
+          { value: '240µm', label: 'Fine pitch' },
+          { value: 'RX', label: 'Inspection' },
+        ],
+      },
       assemblyFeatures: {
-        title: 'PCB assembly capabilities',
+        title: 'Assembly capabilities',
         groups: [
           {
             title: 'PCB',
             items: [
-              '10x10mm to 400x400mm',
+              '5x5mm to 508x440mm',
               'Controlled impedance',
               'FR4, CEM, Roger',
               'Custom stackup',
               'Rigid, SMI, Rigid-Flex',
               'ENIG (NiAu), HAL, Sn, Ag',
               'Solder mask green, white, black, red...',
-              '1 to 24 layers',
+              '1 to 16 layers',
               'Via filled, laser microvia, blind/buried vias',
             ],
           },
@@ -941,13 +1133,15 @@ const translations = {
             title: 'Assembly',
             items: [
               'SMT, Through-hole, PressFit',
-              'BGA, µBGA, LGA, QFN, 0201...',
-              'Fine pitch 0.3mm',
+              '2 Mycronic placement machines',
+              '21,000 components/hour per machine',
+              'BGA, LGA, QFN, 01005...',
+              'Fine pitch 240µm',
             ],
           },
           {
             title: 'Inspection',
-            items: ['AOI', 'X-ray inspection machine'],
+            items: ['According to IPC standards', 'X-ray inspection by a partner'],
           },
         ],
       },
@@ -997,145 +1191,225 @@ const translations = {
     },
     cgvPage: {
       eyebrow: 'Terms of Sale',
-      title: 'GENERAL TERMS AND CONDITIONS OF SALE',
-      lead: 'Version en vigueur à la date 28/02/2026',
+      title: 'GENERAL TERMS AND CONDITIONS OF SALE\nEVIACORE®',
+      lead: '',
       sections: [
         {
           title: 'Article 1 – Purpose',
           lines: [
-            'These General Terms and Conditions of Sale define the terms under which EVIACORE® provides, to an exclusively professional clientele, electronic assembly (PCBA), component sourcing, technical integration, and related industrial services.',
-            'The services are performed solely on the basis of the technical elements provided by the Client in the course of its professional activity. As a result, the Client acts as an informed professional and acknowledges having the skills required to define and validate its product.',
+            'These General Terms and Conditions of Sale define the terms under which EVIACORE provides, to an exclusively professional clientele, industrial services including in particular:',
+            '· electronic board assembly (PCBA)',
+            '· electronic rework operations',
+            '· component sourcing',
+            '· related industrial services.',
+            'The services are performed exclusively on the basis of the technical elements provided by the Client in the course of its professional activity.',
+            'The Client acts as an informed professional, within the meaning of the introductory article of the Consumer Code, and acknowledges having the skills required to design, validate, and industrially operate its product.',
           ],
         },
         {
-          title: 'Article 2 – Acceptance and enforceability',
+          title: 'Article 2 – Acceptance of the conditions',
           lines: [
-            'Any order, signed quote, electronic validation, or deposit payment constitutes full and unconditional acceptance of these Terms, which prevail over any document issued by the Client, in particular its purchase terms and conditions, unless expressly agreed in writing by EVIACORE.',
-            'No tolerance or commercial practice may be interpreted as a waiver of these provisions.',
+            'Any order, signature of a quote, electronic validation on the platform, or deposit payment constitutes full and unconditional acceptance of these GTC.',
+            'These GTC prevail over any document issued by the Client, in particular its purchase terms and conditions, unless expressly agreed in writing by EVIACORE.',
+            'Validation of an order via the online platform constitutes electronic acceptance with the same value as a handwritten signature.',
           ],
         },
         {
           title: 'Article 3 – Formation of the order',
           lines: [
-            'The order becomes firm and final as soon as it is validated in writing by the Client.',
-            'The Client undertakes to provide all data necessary for production, notably:',
-            'complete bill of materials (BOM),',
-            'Gerber files,',
-            'Pick & Place files,',
-            'drawings, instructions, and technical specifications.',
-            'The Client remains solely responsible for the accuracy, consistency, and industrial usability of the information provided.',
+            'The order becomes firm and final upon written validation by the Client or electronic validation on the platform.',
+            'The Client undertakes to provide all information necessary for production, including:',
+            '· complete bill of materials (BOM)',
+            '· Gerber files',
+            '· Pick & Place files',
+            '· drawings and technical specifications.',
+            'The Client remains solely responsible for:',
+            '· the electronic design',
+            '· the technical consistency of the transmitted files',
+            '· the industrial validity of the product.',
             'EVIACORE has no obligation to verify design or product engineering.',
-            'Any modification after validation may result in a revision of prices and lead times.',
+            'Any modification after order validation may result in a revision of prices and lead times.',
           ],
         },
         {
-          title: 'Article 4 – Nature of the intervention and industrial status',
+          title: 'Article 4 – Industrial subcontractor status',
           lines: [
-            'EVIACORE acts exclusively as an industrial subcontractor responsible for the material execution of assembly.',
+            'EVIACORE acts exclusively as an industrial subcontractor in charge of electronic assembly.',
             'The Client retains the status of legal manufacturer of the product and assumes full responsibility for:',
-            'electronic design,',
-            'schematic and PCB routing,',
-            'dimensioning,',
-            'regulatory compliance,',
-            'product safety,',
-            'its final use.',
-            'The services performed do not constitute overall functional validation of the product unless specifically agreed in writing.',
+            '· electronic design',
+            '· schematic and PCB routing',
+            '· dimensioning',
+            '· regulatory compliance',
+            '· product safety',
+            '· its final use.',
+            'EVIACORE’s services do not constitute overall validation of the product.',
           ],
         },
         {
-          title: 'Article 5 – Electronic components',
+          title: 'Article 5 – Testing and validation',
           lines: [
-            'When components are supplied by the Client, it remains solely responsible for their authenticity, quality, compatibility, packaging, and technical compliance.',
-            'EVIACORE shall not be liable for failures resulting from such elements.',
-            'When components are sourced by EVIACORE, purchases are made strictly on the basis of the references provided by the Client.',
-            'The company acts as a technical sourcing intermediary and cannot be held liable for a manufacturing defect, a supplier error, or a defect not reasonably detectable during standard inspections.',
+            'Unless expressly stated otherwise in the quote or order, EVIACORE’s services do not include full functional validation of the product.',
+            'Any tests performed by EVIACORE are solely intended to verify the conformity of the assembly process.',
+            'Final validation of the product is solely the responsibility of the Client.',
           ],
         },
         {
-          title: 'Article 6 – Lead times',
+          title: 'Article 6 – Electronic components',
           lines: [
-            'Lead times are provided for information purposes only unless otherwise committed in writing.',
-            'Delays resulting in particular from supply shortages, electronic market tensions, logistics delays, transport, or customs formalities automatically entail an equivalent extension without penalty or compensation.',
+            'When components are supplied by the Client, it remains solely responsible for:',
+            '· their authenticity',
+            '· their quality',
+            '· their compatibility',
+            '· their packaging',
+            '· their technical compliance.',
+            'EVIACORE shall not be held liable for failures resulting from these elements.',
+            'When components are sourced by EVIACORE, they are purchased strictly on the basis of the references provided by the Client.',
+            'EVIACORE acts as a sourcing intermediary and shall not be liable for:',
+            '· a manufacturing defect',
+            '· a supplier error',
+            '· a defect not detectable during standard inspections.',
           ],
         },
         {
-          title: 'Article 7 – No right of withdrawal',
+          title: 'Article 7 – Lead times',
           lines: [
-            'As the services are custom-made according to the Client’s specifications and within an exclusively professional framework, no right of withdrawal applies.',
-            'In accordance with the provisions of Articles L.221-3 and L.221-28 of the Consumer Code, contracts concluded between professionals and services performed according to personalized specifications do not benefit from any right of withdrawal.',
-            'Any order becomes irrevocable as soon as sourcing, technical preparation, or production is launched. Costs incurred remain fully due.',
+            'Lead times are provided for information purposes only, unless otherwise committed in writing.',
+            'Delays due in particular to:',
+            '· component shortages',
+            '· electronic market tensions',
+            '· supplier delays',
+            '· logistics delays',
+            '· transport',
+            'shall not give rise to any penalty or compensation.',
           ],
         },
         {
-          title: 'Article 8 – Retention of title',
+          title: 'Article 8 – No right of withdrawal',
           lines: [
-            'Delivered products remain the full and complete property of EVIACORE until full payment of sums due, principal and ancillary.',
+            'As the services are custom-made for a professional clientele, no right of withdrawal applies in accordance with Articles L221-3 and L221-28 of the Consumer Code.',
+            'Any order becomes irrevocable as soon as sourcing or production is launched.',
           ],
         },
         {
-          title: 'Article 9 – Delivery, transfer of risks, and transport insurance',
+          title: 'Article 9 – Retention of title',
           lines: [
-            'Risks are transferred to the Client upon handover of the goods to the carrier or when made available.',
-            'To secure shipments, EVIACORE benefits from transport insurance covering parcel shipments against loss or damage occurring during transit, within the limits and conditions provided by the insurance contract.',
-            'In case of damage or loss, the Client agrees to make all necessary reservations with the carrier in accordance with applicable regulations.',
-            'Any compensation shall not exceed the caps provided by said insurance.',
-            'This insurance is a logistics security measure and shall not extend EVIACORE’s contractual liability.',
+            'Delivered products remain the full and complete property of EVIACORE until full payment of sums due.',
           ],
         },
         {
-          title: 'Article 10 – Pre-inspection and power-on',
+          title: 'Article 10 – Delivery and transport',
           lines: [
-            'Before any power-on or integration into a final system, the Client must carry out a complete inspection including visual inspection, electrical checks, and functional validation.',
-            'Any use without these verifications engages the Client’s sole responsibility.',
+            'The transfer of risks occurs upon handover of the goods to the carrier or when made available at EVIACORE’s premises for pickup by the Client or its carrier.',
+            'The Client must check the condition of parcels upon delivery in the presence of the carrier.',
+            'In the event of apparent damage, the Client must:',
+            '· refuse delivery',
+            '· or make precise and detailed reservations on the delivery note.',
+            'These reservations must be confirmed to the carrier within three (3) days in accordance with Article L133-3 of the Commercial Code.',
+            'Failing reservations, the goods will be deemed delivered in conformity and in good condition.',
           ],
         },
         {
-          title: 'Article 11 – Claims and warranty',
+          title: 'Article 11 – Transport insurance',
           lines: [
-            'Any claim must be made in writing within five (5) business days following receipt and before any modification or use of the product.',
-            'The warranty is strictly limited to proven assembly defects and, at EVIACORE’s option, is limited to repair, replacement, or issuance of a credit note.',
+            'EVIACORE benefits from transport insurance covering shipped goods within the limits and caps provided by the insurance contract.',
+            'Any compensation shall not exceed the amounts provided by said insurance.',
           ],
         },
         {
-          title: 'Article 12 – Limitation of liability',
+          title: 'Article 12 – Pre‑power inspection',
           lines: [
-            'EVIACORE’s total liability, for any cause whatsoever, is strictly limited to the amount excluding taxes of the service concerned.',
-            'All indirect or immaterial damages are expressly excluded, including:',
-            'operating losses, production losses, loss of turnover, product recall, contractual penalties, or commercial damages.',
+            'Before any power-on or integration into a final system, the Client must carry out:',
+            '· a visual inspection',
+            '· electrical checks',
+            '· functional validation.',
+            'Any use without these verifications is exclusively the responsibility of the Client.',
           ],
         },
         {
-          title: 'Article 13 – Professional liability insurance',
+          title: 'Article 13 – Claims',
           lines: [
-            'EVIACORE declares that it holds Professional Civil Liability insurance covering the financial consequences of its liability within the strict scope of its activity.',
-            'This insurance shall not have the effect of extending the contractual obligations defined in these Terms.',
-            'A certificate may be provided upon request.',
+            'Any claim must be made in writing within five (5) business days following receipt.',
+            'No claim shall be accepted after modification, use, or integration of the product.',
           ],
         },
         {
-          title: 'Article 14 – Confidentiality',
+          title: 'Article 14 – Warranty',
           lines: [
-            'EVIACORE undertakes to preserve the confidentiality of technical documents and information transmitted by the Client.',
-            'A specific confidentiality agreement may be concluded upon first request.',
+            'The warranty is strictly limited to proven assembly defects.',
+            'It is limited, at EVIACORE’s option, to:',
+            '· repair',
+            '· replacement',
+            '· issuance of a credit note.',
           ],
         },
         {
-          title: 'Article 15 – Force majeure',
+          title: 'Article 15 – Limitation of liability',
           lines: [
-            'EVIACORE shall not be liable for non-performance or delay resulting from a force majeure event as recognized by French law.',
+            'EVIACORE’s total liability is strictly limited to the amount excluding taxes of the relevant service.',
+            'All indirect or immaterial damages are excluded, in particular:',
+            '· operating losses',
+            '· production losses',
+            '· loss of turnover',
+            '· product recall',
+            '· contractual penalties.',
           ],
         },
         {
-          title: 'Article 16 – Severability',
+          title: 'Article 16 – Confidentiality',
           lines: [
-            'If any provision of these Terms is declared invalid, the other stipulations shall remain fully applicable.',
+            'EVIACORE undertakes to preserve the confidentiality of technical documents, files, industrial information, and data transmitted by the Client for the performance of the services.',
+            'This information is used exclusively for production needs and is not disclosed to third parties.',
+            'Within this framework, EVIACORE may involve industrial or technical partners necessary for the performance of the services. These partners are subject to the same confidentiality obligations.',
+            'A confidentiality agreement (NDA – Non‑Disclosure Agreement) may be signed between the parties upon simple request by the Client.',
           ],
         },
         {
-          title: 'Article 17 – Governing law and jurisdiction',
+          title: 'Article 17 – Intellectual property',
           lines: [
-            'These Terms are governed by French law.',
-            'Any dispute relating to their interpretation or performance falls under the exclusive jurisdiction of the Commercial Court of Bordeaux, including in the case of multiple defendants or third-party claims.',
+            'Files, drawings, and technical documents provided by the Client remain its property.',
+            'The Client warrants that it holds all necessary rights and indemnifies EVIACORE against any third‑party claim relating to intellectual property.',
+          ],
+        },
+        {
+          title: 'Article 18 – Production tolerances',
+          lines: [
+            'Given the industrial constraints of electronic assembly, partial component consumption may occur during:',
+            '· machine setup',
+            '· production tests',
+            '· validation boards.',
+            'These losses are considered normal in an industrial process.',
+          ],
+        },
+        {
+          title: 'Article 19 – Quantity tolerance',
+          lines: [
+            'A tolerance of ±5% on produced quantities may be applied.',
+            'Invoicing will be based on quantities actually produced.',
+          ],
+        },
+        {
+          title: 'Article 20 – Component preparation',
+          lines: [
+            'When components supplied by the Client require preparation operations (repackaging, re‑reeling, sorting, or specific handling), EVIACORE reserves the right to charge the corresponding preparation time.',
+          ],
+        },
+        {
+          title: 'Article 21 – Force majeure',
+          lines: [
+            'EVIACORE shall not be liable for the non‑performance of its obligations in the event of a force majeure event within the meaning of Article 1218 of the Civil Code.',
+          ],
+        },
+        {
+          title: 'Article 22 – Partial invalidity',
+          lines: [
+            'If any provision of these GTC is declared null or unenforceable, the other provisions shall remain fully applicable.',
+          ],
+        },
+        {
+          title: 'Article 23 – Jurisdiction',
+          lines: [
+            'These GTC are governed by French law.',
+            'Any dispute falls within the exclusive jurisdiction of the Commercial Court of Bordeaux.',
           ],
         },
       ],
@@ -1144,6 +1418,7 @@ const translations = {
       eyebrow: 'Privacy',
       title: 'PRIVACY POLICY – PERSONAL DATA PROTECTION (GDPR)',
       lead: 'Version in force on the date of 28/02/2026',
+      badge: 'GDPR compliance',
       sections: [
         {
           title: '1 — Data controller',
@@ -1300,58 +1575,86 @@ const translations = {
       lead: '',
       sections: [
         {
-          title: '1. Publisher',
+          title: '1 — Site publisher',
           lines: [
+            'This website is published by:',
             'EVIACORE®',
-            'Société par Actions Simplifiée (SAS)',
-            'Share capital: €30,000',
+            'Société par Actions Simplifiée (SAS) with share capital of €30,000',
             'Registered with the Bordeaux Trade and Companies Register under number 994 666 436',
-            'Registered office: 8 Allée Isaac Newton – 33650 Martillac – France',
+            'Registered office:',
+            '8 Allée Isaac Newton',
+            '33650 Martillac — France',
             'Email: contact@eviacore.com',
             'Publishing director:',
-            'Mr Maxime Mérour, President',
+            'Mr Maxime Merour, President of EVIACORE.',
           ],
         },
         {
-          title: '2. Trademark',
+          title: '2 — Trademark and distinctive signs',
           lines: [
-            'The EVIACORE trademark is the subject of a registration application with the INPI under number 25 5196343, filed on 05 November 2025 and published in the Official Bulletin of Industrial Property on 28 November 2025.',
-            'The trademark is filed in the name of Mr Maxime Mérour.',
-            'EVIACORE has the right to use the said trademark.',
-            'Any reproduction, imitation, or use without prior written authorization is prohibited.',
+            'The EVIACORE trademark is registered with the Institut National de la Propriete Industrielle (INPI) under number 25 5196343, filed on 5 November 2025 and published in the Bulletin Officiel de la Propriete Industrielle (BOPI) on 20 February 2026.',
+            'The trademark is registered in the name of Mr Maxime Merour.',
+            'EVIACORE benefits from a right to use said trademark.',
+            'Any reproduction, imitation, use, or exploitation, in whole or in part, without prior written authorization is strictly prohibited and constitutes infringement within the meaning of Articles L.713-2 et seq. of the Intellectual Property Code.',
           ],
         },
         {
-          title: '3. Hosting',
+          title: '3 — Hosting',
           lines: [
-            'Main site hosted by:',
-            'O2Switch – Clermont-Ferrand – France',
-            'Authentication / customer area hosted by:',
-            'OVH SAS – 2 rue Kellermann – 59100 Roubaix – France',
+            'Marketing website',
+            'The presentation site is hosted by:',
+            'O2Switch',
+            'Chemin des Pardiaux',
+            '63000 Clermont-Ferrand — France',
+            'https://www.o2switch.fr',
+            'This service hosts only the presentation pages of the site.',
+            'Client platform and application',
+            'The client area and platform accessible via app.eviacore.com are hosted by:',
+            'OVH SAS',
+            '2 rue Kellermann',
+            '59100 Roubaix — France',
+            'https://www.ovhcloud.com',
+            'Client data, user accounts, and technical documents are hosted on infrastructure located within the European Union.',
           ],
         },
         {
-          title: '4. Intellectual property',
+          title: '4 — Intellectual property',
           lines: [
-            'All site content (texts, visuals, graphics, logos, documents, structure, code) is protected by the Intellectual Property Code.',
-            'Any total or partial reproduction without authorization is prohibited.',
+            'The entire website, including texts, images, graphics, logos, icons, documents, architecture, software, and source code, is protected by the Intellectual Property Code.',
+            'Any reproduction, representation, modification, publication, or adaptation, in whole or in part, by any means whatsoever, is prohibited without prior written authorization from EVIACORE.',
           ],
         },
         {
-          title: '5. Liability',
+          title: '5 — Liability',
           lines: [
-            'EVIACORE cannot be held liable for:',
-            'errors or omissions,',
-            'temporary interruption of the site,',
-            'direct or indirect damages related to the use of the site,',
-            'content of third-party sites.',
+            'EVIACORE endeavors to ensure the accuracy and updating of the information published on the site. However, the company cannot guarantee the accuracy, completeness, or permanent currency of the content.',
+            'EVIACORE cannot be held liable in particular for:',
+            'temporary interruptions of the site;',
+            'technical malfunctions;',
+            'direct or indirect damages resulting from the use of the site;',
+            'technical incompatibility with the user’s equipment;',
+            'content of third-party sites accessible via hyperlinks.',
+            'The user remains solely responsible for the use of the information available on the site.',
           ],
         },
         {
-          title: '6. Applicable law',
+          title: '6 — Personal data',
           lines: [
-            'The site is subject to French law.',
-            'Any dispute falls under the competent French courts.',
+            'Personal data processing carried out via the site and platform is governed by the Privacy Policy (GDPR), accessible at any time from the site.',
+          ],
+        },
+        {
+          title: '7 — Cookies',
+          lines: [
+            'The site may use cookies and similar technologies necessary for its operation, audience measurement, and service improvement, in accordance with the Privacy Policy.',
+            'Users can manage their preferences via their browser settings.',
+          ],
+        },
+        {
+          title: '8 — Applicable law',
+          lines: [
+            'This website is governed by French law.',
+            'Any dispute relating to its use falls within the jurisdiction of the competent French courts, unless mandatory legal provisions state otherwise.',
           ],
         },
       ],
