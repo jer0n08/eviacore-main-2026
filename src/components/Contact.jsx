@@ -119,7 +119,7 @@ function Contact() {
                   Adresse
                 </span>
                 <p className="mt-2 text-base text-white">
-                  8 Allee Isaac Newton – 33650 Martillac
+                  8 Allée Isaac Newton – 33650 Martillac
                 </p>
               </div>
             </div>
