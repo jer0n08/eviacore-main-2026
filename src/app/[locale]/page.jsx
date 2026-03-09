@@ -155,7 +155,7 @@ export default function HomePage() {
                   className="min-h-[260px] rounded-[24px] border border-[rgba(255,255,255,0.06)] bg-[#1c1c1c] px-[26px] py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition hover:border-[#F6C94A]/40"
                 >
                   {card.icon === 'loader' ? (
-                    <div className="relative mb-4 h-3.5 w-3.5" aria-hidden="true">
+                    <div className="relative mb-4 flex h-3.5 w-3.5 items-center justify-center" aria-hidden="true">
                       <span className="absolute inline-flex h-full w-full rounded-full bg-[#F6C94A] opacity-75 animate-ping" />
                       <span className="relative inline-flex h-full w-full rounded-full bg-[#F6C94A]" />
                     </div>
@@ -189,7 +189,7 @@ export default function HomePage() {
                   className="min-h-[260px] rounded-[24px] border border-[rgba(255,255,255,0.06)] bg-[#1c1c1c] px-[26px] py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition hover:border-[#F6C94A]/40"
                 >
                   {card.icon === 'loader' ? (
-                    <div className="relative mb-4 h-3.5 w-3.5" aria-hidden="true">
+                    <div className="relative mb-4 flex h-3.5 w-3.5 items-center justify-center" aria-hidden="true">
                       <span className="absolute inline-flex h-full w-full rounded-full bg-[#F6C94A] opacity-75 animate-ping" />
                       <span className="relative inline-flex h-full w-full rounded-full bg-[#F6C94A]" />
                     </div>

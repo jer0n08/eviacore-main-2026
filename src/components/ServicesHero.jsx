@@ -22,7 +22,7 @@ function ServicesHero() {
           />
         </div>
       </section>
-      <section className="relative overflow-hidden pb-24 pt-12 text-center">
+      <section className="relative overflow-hidden pb-12 pt-12 text-center">
         <div className="relative z-10 mx-auto w-11/12 max-w-6xl px-6 md:px-10">
           <p className="mb-4 text-xs uppercase tracking-widest text-slate-400">
             {t('servicesHero.eyebrow')}

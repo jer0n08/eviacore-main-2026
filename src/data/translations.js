@@ -8,25 +8,14 @@ const translations = {
       lang: 'Langue',
     },
     hero: {
-      eyebrow: 'Fabricant de cartes électroniques',
       title: 'Votre VIA entre la conception et le PCBA',
       lead:
         'EVIACORE® prend en charge l’approvisionnement de vos PCB et composants, puis assure l’assemblage industriel de vos cartes électroniques avec un suivi technique personnalisé.',
       primaryCta: 'ACCEDER A MON ESPACE',
       secondaryCta: 'Voir nos services',
-
-      panel: {
-        title: 'Commande guidée',
-        heading: 'Une app claire pour lancer votre carte en quelques étapes.',
-        bullets: ['Spécifications techniques', 'Validation rapide', 'Production et contrôle'],
-      },
     },
     home: {
       overview: {
-        eyebrow: 'Plateforme',
-        title: "Uploadez. Validez. Produisez.",
-        lead:
-          "Déposez votre BOM, ajustez vos quantités et délais, et pilotez votre fabrication depuis un espace centralisé conçu pour fluidifier chaque étape.",
         cards: [
                 {
             title: 'Déposez votre BOM',
@@ -40,28 +29,6 @@ const translations = {
           {
             title: 'Suivi live',
             text: "Visualisez l’avancement de votre projet à chaque étape.",
-          },
-        ],
-      },
-      steps: {
-        eyebrow: 'Process',
-        title: 'Votre usine connectée en 4 étapes.',
-        items: [
-          {
-            title: 'Déposez vos fichiers',
-            text: 'Gerbers, BOM, contraintes et détails critiques en un seul flux.',
-          },
-          {
-            title: 'Paramétrez votre lot',
-            text: 'Choisissez quantité, délai, tests et options de qualité.',
-          },
-          {
-            title: 'Validez et commandez',
-            text: 'Partagez avec votre équipe, validez et lancez la fabrication.',
-          },
-          {
-            title: 'Suivi temps réel',
-            text: 'Production, contrôle et logistique visibles en continu.',
           },
         ],
       },
@@ -127,8 +94,6 @@ const translations = {
       },
     },
     services: {
-      eyebrow: 'Services',
-      title: 'Une chaîne complète pour vos cartes électroniques.',
       steps: {
         eyebrow: 'Process court',
         title: 'Pilotez la fabrication en 4 étapes.',
@@ -151,20 +116,6 @@ const translations = {
           },
         ],
       },
-      items: [
-        {
-          title: 'Design & optimisation',
-          text: 'Conception de circuits robustes avec simulation et vérification.',
-        },
-        {
-          title: 'Industrialisation',
-          text: 'Passage en production avec dossiers techniques et process qualité.',
-        },
-        {
-          title: 'Assemblage & test',
-          text: 'Assemblage, tests fonctionnels et traçabilité par lot.',
-        },
-      ],
       timelineOnline: {
         title: 'Création du projet en ligne, de la config à la validation',
         items: [
@@ -198,6 +149,10 @@ const translations = {
         title: 'Fabrication et contrôles, étape par étape',
         items: [
           {
+            title: "Réception PCB et composants",
+            text: "Gestion de l’humidité des composants et PCB conformément au standard IPC/JEDEC J-STD-033. Séchage contrôlé réalisé dans une étuve Binder FD 260 certificat de conformité (07/2025).",
+          },
+          {
             title: "Contrôle d'entrée et préparation des composants",
             text: 'Les composants sont comptés, vérifiés, reconditionnés et préparés pour le placement CMS.',
           },
@@ -207,7 +162,7 @@ const translations = {
           },
           {
             title: 'Placement CMS sur ligne automatisée',
-            text: 'Placement automatique des composants avec contrôle de précision et de cadence.',
+            text: 'Placement automatique des composants avec test electrique des composants passifs avant la pose.',
           },
           {
             title: 'Refusion en four à phase vapeur',
@@ -242,7 +197,7 @@ const translations = {
             description:
               'Assemblage de circuits imprimés standards et techniques pour prototypes et petites séries industrielles.',
             items: [
-              "Formats PCB : 5 x 5 mm à 430 x 508 mm",
+              "Formats PCB : 5 x 5 mm à 610 x 460 mm",
               'Jusqu’à 16 couches', 
               'Matériaux : FR4 · CEM · Rogers',
          
@@ -282,39 +237,6 @@ const translations = {
           { value: 'RX', label: 'Inspection' },
         ],
       },
-      assemblyFeatures: {
-        title: "Caractéristiques de l'assemblage PCB",
-        groups: [
-          {
-            title: 'PCB',
-            items: [
-              '5x5mm à 508x440mm',
-              'Impédances contrôlées',
-              'FR4, CEM, Roger',
-              'Stackup spécifique',
-              'Rigid, SMI, Rigid-Flex',
-              'ENIG (NiAu), HAL, Sn, Ag',
-              'Vernis vert, blanc, noir, rouge...',
-              '1 à 16 couches',
-              'Via filled, µVia laser, via borgnes/enterrés',
-            ],
-          },
-          {
-            title: 'Assemblage',
-            items: [
-              'CMS, Traversant, PressFit',
-              '2 Machines de placement Mycronic',
-              '21 000 composants/heure par machine',
-              'BGA, LGA, QFN, 01005...',
-              'Fine Pitch 0,3mm',
-            ],
-          },
-          {
-            title: 'Contrôle',
-            items: ['Selon les normes IPC', "Inspection à Rayons X chez un prestataire"],
-          },
-        ],
-      },
     },
     servicesHero: {
       eyebrow: 'Assemblage électronique',
@@ -323,9 +245,7 @@ const translations = {
         "Chiffrez, assemblez et suivez chaque étape de vos cartes électroniques depuis une interface, avec une production locale et des délais maîtrisés. Assemblage PCBA et approvisionnement composants pilotés par nos équipes.",
       tags: ['Délai court', 'Traçabilité totale', 'Support expert'],
       primaryCta: 'Démarrer un projet',
-      secondaryCta: 'Voir les services',
       imageAlt: 'Vue du process de fabrication',
-      imageCaption: 'Assemblage de cartes électroniques',
     },
     contact: {
       eyebrow: 'Contact',
@@ -840,29 +760,14 @@ const translations = {
       lang: 'Language',
     },
     hero: {
-      eyebrow: 'Electronic board manufacturer',
       title: 'Your VIA between design and PCBA',
       lead:
         'EVIACORE® handles the sourcing of your PCBs and components, then ensures the industrial assembly of your electronic boards with dedicated technical support throughout the project.',
       primaryCta: 'ACCESS MY ACCOUNT',
       secondaryCta: 'View our services',
-      stats: [
-        { value: '48h', label: 'Initial quote' },
-        { value: 'ISO', label: 'Quality process' },
-        { value: '100%', label: 'Project traceability' },
-      ],
-      panel: {
-        title: 'Guided order',
-        heading: 'A clear app to launch your board in a few steps.',
-        bullets: ['Technical specifications', 'Fast validation', 'Production and control'],
-      },
     },
     home: {
       overview: {
-        eyebrow: 'Platform',
-        title: 'With the EVIACORE App\nUpload. Validate. Produce.',
-        lead:
-          'Upload your BOM, fine-tune volumes and lead times, and drive your manufacturing from a centralized space built to streamline every step.',
         cards: [
           {
             title: 'Instant pricing',
@@ -875,28 +780,6 @@ const translations = {
           {
             title: 'Live tracking',
             text: 'Track every step of your project in real time.',
-          },
-        ],
-      },
-      steps: {
-        eyebrow: 'Process',
-        title: 'Your connected factory in 4 steps.',
-        items: [
-          {
-            title: 'Upload your files',
-            text: 'Gerbers, BOM, constraints, and critical details in one flow.',
-          },
-          {
-            title: 'Configure the batch',
-            text: 'Choose quantity, lead time, testing, and quality options.',
-          },
-          {
-            title: 'Validate and order',
-            text: 'Share with your team, validate, and launch production.',
-          },
-          {
-            title: 'Real-time tracking',
-            text: 'Production, control, and logistics visible continuously.',
           },
         ],
       },
@@ -960,8 +843,6 @@ const translations = {
       },
     },
     services: {
-      eyebrow: 'Services',
-      title: 'A complete chain for your electronic boards.',
       steps: {
         eyebrow: 'Short process',
         title: 'Drive production in 4 steps.',
@@ -984,20 +865,6 @@ const translations = {
           },
         ],
       },
-      items: [
-        {
-          title: 'Design & optimization',
-          text: 'Robust circuit design with simulation and verification.',
-        },
-        {
-          title: 'Industrialization',
-          text: 'Production-ready files with quality processes and checks.',
-        },
-        {
-          title: 'Assembly & testing',
-          text: 'Assembly, functional testing, and batch traceability.',
-        },
-      ],
       timelineOnline: {
         title: 'Create your project online, from configuration to validation',
         items: [
@@ -1065,40 +932,38 @@ const translations = {
         ],
       },
       assemblyCapabilities: {
-        title: 'Assembly capabilities',
+        title: 'Technical capabilities',
         lead:
           '',
         sections: [
           {
-            title: 'Compatible PCBs',
+            title: 'Supported PCB technologies',
             description:
-              'Assembly of standard and advanced PCBs for prototypes and small industrial batches.',
+              'Assembly of standard and advanced printed circuit boards for prototypes and small industrial batches.',
             items: [
-              'Dimensions: 10 mm → 400 mm',
+              'PCB formats: 5 x 5 mm to 610 x 460 mm',
               'Up to 16 layers',
-              'Custom stackup',
-              'FR4 · CEM · Rogers',
-              'Rigid · Flex · Rigid-Flex',
+              'Materials: FR4 · CEM · Rogers',
+              'Rigid · Flex · Rigid-Flex boards',
+              'Custom stackup and controlled impedance available',
             ],
           },
           {
-            title: 'Electronic assembly',
+            title: 'SMT assembly',
             description:
-              'Automated SMT assembly with modern equipment and traceable processes.',
+              'Automated PCB assembly using modern SMT technologies.',
             items: [
-              'SMT / Through-hole / Press-Fit',
+              'SMT, Through-hole, Press-Fit',
               'BGA · LGA · QFN ...',
-              '01005 components',
-              'Fine pitch 240µm',
-              'Prototypes and small batches',
+              'Miniature components down to 01005',
+              'Solder paste jetting by ejector - precise deposit down to 240 microns',
             ],
           },
           {
             title: 'Inspection & quality',
             description:
-              'Quality checks aligned with IPC standards and electronics industry best practices.',
+              'Checks performed using electronics industry best practices and IPC criteria.',
             items: [
-              'AOI optical inspection',
               'X-ray inspection',
               'Visual inspection',
               'Critical assembly validation',
@@ -1112,39 +977,6 @@ const translations = {
           { value: 'RX', label: 'Inspection' },
         ],
       },
-      assemblyFeatures: {
-        title: 'Assembly capabilities',
-        groups: [
-          {
-            title: 'PCB',
-            items: [
-              '5x5mm to 508x440mm',
-              'Controlled impedance',
-              'FR4, CEM, Roger',
-              'Custom stackup',
-              'Rigid, SMI, Rigid-Flex',
-              'ENIG (NiAu), HAL, Sn, Ag',
-              'Solder mask green, white, black, red...',
-              '1 to 16 layers',
-              'Via filled, laser microvia, blind/buried vias',
-            ],
-          },
-          {
-            title: 'Assembly',
-            items: [
-              'SMT, Through-hole, PressFit',
-              '2 Mycronic placement machines',
-              '21,000 components/hour per machine',
-              'BGA, LGA, QFN, 01005...',
-              'Fine pitch 240µm',
-            ],
-          },
-          {
-            title: 'Inspection',
-            items: ['According to IPC standards', 'X-ray inspection by a partner'],
-          },
-        ],
-      },
     },
     servicesHero: {
       eyebrow: 'Electronic assembly',
@@ -1153,9 +985,7 @@ const translations = {
         'Quote, assemble, and track every step of your electronic boards from one interface, with local production and controlled lead times. PCBA assembly and component sourcing handled by our team.',
       tags: ['Short lead time', 'Full traceability', 'Expert support'],
       primaryCta: 'Access my account',
-      secondaryCta: 'View our services',
       imageAlt: 'Manufacturing process overview',
-      imageCaption: 'Electronic board assembly',
     },
     contact: {
       eyebrow: 'Contact',

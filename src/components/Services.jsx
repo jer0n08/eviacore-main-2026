@@ -412,7 +412,7 @@ function Services() {
             </div>
           </div>
         </section>
-        <section className="services-section w-full text-white py-24 px-6" aria-labelledby="assembly-capabilities-title">
+        <section className="services-section w-full text-white py-12 px-6" aria-labelledby="assembly-capabilities-title">
           <div className="mx-auto w-11/12 max-w-6xl">
             <div className="text-center max-w-3xl mx-auto">
               <h2 id="assembly-capabilities-title" className="text-4xl md:text-4xl font-semibold tracking-tight font-['Space_Mono',_IBM_Plex_Mono,_monospace]">

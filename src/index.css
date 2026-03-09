@@ -98,10 +98,6 @@ img {
   color: #f7f7f2;
 }
 
-.timeline-section.is-paired {
-  padding-bottom: 0;
-}
-
 .timeline-section .main-content {
   position: relative;
   display: grid;
