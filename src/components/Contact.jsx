@@ -168,7 +168,6 @@ function Contact() {
               />
             </label>
             <div className="grid gap-2 text-sm text-slate-300">
-              <span>{t('contact.form.recaptchaLabel')}</span>
               <div id="recaptcha-badge" />
               {!siteKey ? (
                 <span className="text-xs text-amber-300">

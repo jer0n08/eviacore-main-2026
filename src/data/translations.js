@@ -11,7 +11,7 @@ const translations = {
       title: 'Votre VIA entre la conception et le PCBA',
       lead:
         'EVIACORE® prend en charge l’approvisionnement de vos PCB et composants, puis assure l’assemblage industriel de vos cartes électroniques avec un suivi technique personnalisé.',
-      primaryCta: 'ACCEDER A MON ESPACE',
+      primaryCta: 'ACCÉDER A MON ESPACE',
       secondaryCta: 'Voir nos services',
     },
     home: {
@@ -162,7 +162,7 @@ const translations = {
           },
           {
             title: 'Placement CMS sur ligne automatisée',
-            text: 'Placement automatique des composants avec test electrique des composants passifs avant la pose.',
+            text: 'Placement automatique des composants avec test électrique des composants passifs avant la pose.',
           },
           {
             title: 'Refusion en four à phase vapeur',
@@ -214,7 +214,7 @@ const translations = {
               'CMS, Traversant, Press‑Fit',
               'Package : BGA · LGA · QFN ...',
               "Composants miniatures jusqu'au 01005",
-              "Jetting de pâte à braser par éjecteur - dépot précis jusqu'à 240µm",
+              "Jetting de pâte à braser par éjecteur - dépôt précis jusqu'à 240µm",
               
             ],
           },
@@ -261,7 +261,7 @@ const translations = {
         emailPlaceholder: 'nom@entreprise.com',
         message: 'Message',
         messagePlaceholder: 'Décrivez votre projet',
-        recaptchaLabel: 'Verification anti-spam',
+       
         recaptchaError: 'Merci de valider le recaptcha pour envoyer le formulaire.',
         recaptchaMissing: 'Recaptcha non configure. Ajoutez la cle site.',
         successMessage: 'Votre message a été envoyé, merci.',
@@ -1000,7 +1000,7 @@ const translations = {
         emailPlaceholder: 'name@company.com',
         message: 'Message',
         messagePlaceholder: 'Describe your project',
-        recaptchaLabel: 'Anti-spam verification',
+      
         recaptchaError: 'Please complete the recaptcha to submit the form.',
         recaptchaMissing: 'Recaptcha not configured. Add your site key.',
         successMessage: 'Your message has been sent, thank you.',
